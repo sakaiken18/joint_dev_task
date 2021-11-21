@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names <<("斉藤")
+  names << ("斉藤")
   puts names
 end
 
@@ -15,17 +15,13 @@ def q2
 
   # 以下に回答を記載
   p array1 + array2
-  
 end
-
 
 def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
   p numbers.count(3)
-
-3
 end
 
 def q4
@@ -50,7 +46,7 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  numbers2 = numbers1.map {|num| num * 10}
+  numbers2 = numbers1.map { |num| num * 10 }
   p numbers2
 end
 
@@ -78,7 +74,7 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each.with_index(1) do |name,i|
+  names.each.with_index(1) do |name, i|
     puts "会員No.#{i} #{name}さん"
   end
 end
@@ -87,13 +83,13 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-foods.each do |food|
-  if food.include?("うに")
-    puts "好物です"
-  else
-    puts "まぁまぁ好きです"
+  foods.each do |food|
+    if food.include?("うに")
+      puts "好物です"
+    else
+      puts "まぁまぁ好きです"
+    end
   end
-end
 end
 
 def q11
@@ -101,7 +97,7 @@ def q11
 
   # 以下に回答を記載
   puts "ユーザーの趣味一覧"
-  sports.flatten.uniq!.each.with_index(1) do  |sport,i|
+  sports.flatten.uniq!.each.with_index(1) do |sport, i|
     puts "No.#{i} #{sport}"
   end
 end
@@ -133,11 +129,9 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  puts data1.has_key?(:age)? "OK" : "NG"
-  
-  puts data2.has_key?(:age)? "OK" : "NG"
-  
-  
+  puts data1.has_key?(:age) ? "OK" : "NG"
+
+  puts data2.has_key?(:age) ? "OK" : "NG"
 end
 
 def q16
@@ -145,7 +139,7 @@ def q16
     { name: "satou", age: 22 },
     { name: "yamada", age: 12 },
     { name: "takahashi", age: 32 },
-    { name: "nakamura", age: 41 }
+    { name: "nakamura", age: 41 },
   ]
 
   # 以下に回答を記載
@@ -156,7 +150,19 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(name:, age:, gender:)
+   @name = name
+   @age = age
+   @gender = gender
+  end
 
+  def info
+    puts <<-EOS
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    EOS
+  end
 end
 
 def q17
@@ -207,7 +213,6 @@ class Zoo
 
 end
 
-
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
   zoo = Zoo.new(name: "旭山動物園", entry_fee: { infant: 0, children: 400, adult: 800, senior: 500 })
@@ -216,7 +221,7 @@ def q20
     UserQ20.new(name: "たま", age: 3),
     UserQ20.new(name: "ゆたぼん", age: 10),
     UserQ20.new(name: "あじー", age: 32),
-    UserQ20.new(name: "ぎん", age: 108)
+    UserQ20.new(name: "ぎん", age: 108),
   ]
 
   users.each do |user|
